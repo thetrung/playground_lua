@@ -28,8 +28,11 @@ So it can be assigned into any variable or table :
 3. String 
 
 ```
-    string.sub("ABC",1,2)
-    string.len("ABCD")
+    tostring(1)--=> "1"
+    
+    string.len("ABCD") --=> 4
+    
+    string.sub("ABC",1,2)--=> AB
 ```
 
 4. Meta Table 
