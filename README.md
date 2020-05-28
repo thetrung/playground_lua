@@ -24,3 +24,26 @@ So it can be assigned into any variable or table :
     
     map = { ["square"] = square }
 ```
+
+3. String 
+
+```
+    string.sub("ABC",1,2)
+    string.len("ABCD")
+```
+
+4. Meta Table 
+
+```
+    local _hashed = {}
+    hashed = {}
+    local mt = {
+	    __index  = function(t, k)
+		    if _hashed[k] == nil then
+			    _hashed[k] = hash(k)
+		    end 
+		    return _hashed[k]
+	    end
+    }
+    setmetatable(hashed, mt)
+```
