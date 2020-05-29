@@ -33,6 +33,8 @@ So it can be assigned into any variable or table :
     string.len("ABCD") --=> 4
     
     string.sub("ABC",1,2)--=> AB
+    
+    string.find("Hello World", "World") --=> true
 ```
 
 4. Meta Table 
