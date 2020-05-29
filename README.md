@@ -38,15 +38,15 @@ So it can be assigned into any variable or table :
 4. Meta Table 
 
 ```
-    local _hashed = {}
-    hashed = {}
-    local mt = {
-	    __index  = function(t, k)
-		    if _hashed[k] == nil then
-			    _hashed[k] = hash(k)
-		    end 
-		    return _hashed[k]
-	    end
-    }
-    setmetatable(hashed, mt)
+local _M = {}
+
+setmetatable(_M, {
+	__index = function(t, key)
+		local h = hash(key)
+		rawset(t, key, h)
+		return h
+	end
+})
+
+return _M
 ```
