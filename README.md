@@ -3,7 +3,7 @@ A collection of testing feature and toying around this adorable language.
 
 ### Notes
 
-1. Ternary operators
+#### 1. Ternary operators
 
 Ternary operators are a useful feature in C:
 ```
@@ -11,33 +11,60 @@ Ternary operators are a useful feature in C:
 ```
 Roughly translates to the following Lua:
 ```
-    value = test and x or y
+    value = x > 3 and 1 or 0
 ```
 
-2. Lambda Function 
+#### 2. Lambda Function 
 ```
     function (n) return n * n end
 ```
 So it can be assigned into any variable or table :
 ```
     square = function (n) return n * n end
-    
-    map = { ["square"] = square }
+```
+or table :
+```
+	map = { ["square"] = square }
 ```
 
-3. String 
+#### 3. String 
 
+String conversion :
 ```
     tostring(1)--=> "1"
-    
+```
+
+String length :
+```
     string.len("ABCD") --=> 4
-    
+```
+
+Sub string :
+```
     string.sub("ABC",1,2)--=> AB
-    
+```
+
+Find word in a string :
+```
     string.find("Hello World", "World") --=> true
 ```
 
-4. Meta Table 
+#### 4. Self 
+
+Any local, global variable on script scope is shared among instances.
+```
+shared_value = 10
+local _shared_private_value = 10
+```
+
+But any varible attached to `self` will stay on its own instance :
+```
+function init(self)
+    self.instance_value = 11
+end
+```
+
+#### 5. Meta Table 
 
 ```
 local _M = {}
