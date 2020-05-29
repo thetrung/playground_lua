@@ -4,7 +4,6 @@ A collection of testing feature and toying around this adorable language.
 ### Notes
 
 #### 1. Ternary operators
-
 Ternary operators are a useful feature in C:
 ```
     int value = x>3 ? 1 : 0;
@@ -18,7 +17,7 @@ Roughly translates to the following Lua:
 ```
     function (n) return n * n end
 ```
-So it can be assigned into any variable or table :
+So it can be assigned into any variables :
 ```
     square = function (n) return n * n end
 ```
@@ -65,7 +64,7 @@ end
 ```
 
 #### 5. Meta Table 
-
+Here's how dynamic hashed value store when there's none assigned to "hashed" table :
 ```
 local _M = {}
 
